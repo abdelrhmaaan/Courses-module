@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem
+        id="courses_menu_root"
+        name="Courses"
+        sequence="10"/>
+    
+
+
+    <menuitem
+        id="courses_menu"
+        name="All Courses"
+        action="courses_course_action"
+        parent="courses_menu_root"
+        sequence="10"/>
+    
+    <menuitem
+        id="rooms_menu"
+        name="Rooms"
+        action="courses_room_action"
+        parent="courses_menu_root"
+        sequence="10"/>
+
+    <menuitem
+        id="instructors_menu"
+        name="Instructors"
+        action="hr_employee_action"
+        parent="courses_menu_root"
+        sequence="10"/>
+
+    <menuitem
+        id="attendees_menu"
+        name="Attendees"
+        action="contacts.action_contacts"
+        parent="courses_menu_root"
+        sequence="10"/>
+
+</odoo>

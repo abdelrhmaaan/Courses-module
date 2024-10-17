@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <record id="view_courses_form" model="ir.ui.view">
+        <field name="name">courses.course.form</field>
+        <field name="model">courses.course</field>
+        <field name="arch" type="xml">
+            <form string="Course">
+                <sheet>
+                    <group>
+                        <!-- Basic Course Information -->
+                        <field name="name"/>
+                        <field name="instructor_id"/>
+                        <field name="room_id"/>
+                        <field name="start_date"/>
+                        <field name="description"/>
+                    </group>
+
+                    <!-- Tabs for Attendees and Lessons -->
+                    <notebook>
+                        <!-- Attendees Tab -->
+                        <page string="Attendees">
+                            <field name="attendee_ids" >
+                                <tree editable="bottom">
+                                    <field name="name"/>
+                                    <field name="mobile" />
+                                    <field name="email" />
+                                </tree>
+                            </field>
+                        </page>
+
+                        <!-- Lessons Tab -->
+                        <page string="Lessons">
+                            <field name="lesson_ids">
+                                <tree editable="bottom">
+                                    <field name="name"/>
+                                    <field name="room_id" />
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="courses_course_action" model="ir.actions.act_window">
+        <field name="name">All Courses</field>
+        <field name="res_model">courses.course</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- rooms window action -->
+
+    <record id="courses_room_action" model="ir.actions.act_window">
+        <field name="name">Rooms</field>
+        <field name="res_model">courses.room</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

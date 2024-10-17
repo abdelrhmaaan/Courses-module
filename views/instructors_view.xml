@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    
+    <record id="hr_employee_action" model="ir.actions.act_window">
+        <field name="name">Instructors</field>
+        <field name="res_model">hr.employee</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('department_id.name','=','Teaching')]</field>
+    </record>
+
+
+</odoo>

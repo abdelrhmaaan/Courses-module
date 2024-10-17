@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Teaching Department Record -->
+        <record id="hr_department_teaching" model="hr.department">
+            <field name="name">Teaching</field>
+        </record>
+    </data>
+
+</odoo>

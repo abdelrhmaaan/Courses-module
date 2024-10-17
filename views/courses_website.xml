@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="courses_page_template" name="CoursesPage">
+        <t t-call="website.layout">
+            <div class="container">
+                <h1>Our Courses</h1>
+                <t t-foreach="courses" t-as="course">
+                    <!-- make card -->
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                Course Name: <t t-esc="course.name"/>
+                            </h5>
+                            <h6 class="card-title">
+                                Course starting Date: <t t-esc="course.start_date"/>
+                            </h6>
+                            <h6 class="card-title">
+                                Course Location: <t t-esc="course.room_id.name"/>
+                            </h6>
+                            <p class="card-text">
+                                Course Description: <t t-esc="course.description"/>
+                            </p>
+
+                        </div>
+                    </div>
+                </t>
+            </div>
+        </t>
+    </template>
+
+</odoo>

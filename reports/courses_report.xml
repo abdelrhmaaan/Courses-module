@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<record id="action_report_courses_report" model="ir.actions.report">
+    <field name="name">Course Lessons</field>
+    <field name="model">courses.course</field>
+    <field name="report_type">qweb-pdf</field>
+    <field name="report_name">courses.report_courses_course</field>
+    <field name="report_file">courses.report_courses_course</field>
+    <field name="print_report_name">'%s' % object.name</field>
+    <field name="binding_model_id" ref="model_courses_course"/>
+    <field name="binding_type">report</field>
+</record>
+
+<template id="report_courses_course">
+    <t t-call="web.html_container">
+        <t t-foreach="docs" t-as="o">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <table>
+                        <tr>
+                            <th>Course Name</th>
+                            <th>Start Date</th>
+                            <th>Description</th>
+                            <th>Num of Lessons</th>
+                        </tr>
+                        <tr>
+                            <th><t t-esc="o.name"/></th>
+                            <th><t t-esc="o.start_date"/></th>
+                            <th><t t-esc="o.description"/></th>
+                            <th><t t-esc="len(o.lesson_ids)"/></th>
+                        </tr>
+                    </table>
+                </div>
+            </t>
+        </t>
+    </t>
+</template>
+    
+
+</odoo>
+
